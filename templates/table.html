@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <meta charset="UTF-8">
+    {% set cabin = 'Каюта №' %}
+    <h4 class="cabin">Оформление каюты</h4>
+    {% if sex == 'male' %}
+        {% if age < 21 %}
+            <table>
+                <tr>
+                    <td>Цвет стен</td>
+                    <td>Эмблема</td>
+                </tr>
+                <tr>
+                    <td><img src="/static/img/male_child.png"></td>
+                    <td><img src="/static/img/child.jpg"></td>
+                </tr>
+            </table>
+        {% elif age >= 21 %}
+            <table>
+            <tr>
+                <td>Цвет стен</td>
+                <td>Эмблема</td>
+            </tr>
+            <tr>
+                <td><img src="/static/img/male_adult.png"></td>
+                <td><img src="/static/img/adult.png"></td>
+            </tr>
+        </table>
+        {% endif %}
+    {% elif sex == 'female' %}
+        {% if age < 21 %}
+            <table>
+                <tr>
+                    <td>Цвет стен</td>
+                    <td>Эмблема</td>
+                </tr>
+                <tr>
+                    <td><img src="/static/img/female_child.png"></td>
+                    <td><img src="/static/img/child.jpg"></td>
+                </tr>
+            </table>
+        {% elif age >= 21 %}
+            <table>
+            <tr>
+                <td>Цвет стен</td>
+                <td>Эмблема</td>
+            </tr>
+            <tr>
+                <td><img src="/static/img/female_adult.png"></td>
+                <td><img src="/static/img/adult.png"></td>
+            </tr>
+        </table>
+        {% endif %}
+    {% endif %}
+{% endblock %}
